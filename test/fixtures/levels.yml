@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_id: 1
+  layout_id: 1
+  level_num: 1
+  time_elapsed: 1
+  score: 1
+
+two:
+  game_id: 1
+  layout_id: 1
+  level_num: 1
+  time_elapsed: 1
+  score: 1

@@ -1,7 +1,7 @@
 Butterflies::Application.configure do
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get(
-    ENV[‘LOG_LEVEL’] ? ENV[’LOG_LEVEL’].upcase : ‘DEBUG’
+    ENV['LOG_LEVEL'] ? ENV['LOG_LEVEL'].upcase : 'DEBUG'
   )
   # Settings specified here will take precedence over those in config/application.rb
 
