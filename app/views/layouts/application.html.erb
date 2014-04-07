@@ -8,7 +8,32 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="container">
+  <div id="nav">
+    <ul>
+      <li><a href="#">New Game</a></li>
+      
+      <% #if current_user %>
+        <li><a href="#">Welcome!</a></li>
+        <li><a href="#">Your Stats</a></li>
+      <% #else %>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign Up</a></li>
+      <% #end %>
+      
+        <li><a href="#">High Scores</a></li>
+        
+      <% #if current_user %>
+        <li><a href="#">Sign Out</a></li>
+      <% #end %>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <%= yield %>
+  </div>
+  
+</div>
 
 </body>
 </html>
