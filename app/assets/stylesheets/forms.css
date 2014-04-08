@@ -1,0 +1,30 @@
+form {
+  display: inline;
+}
+
+#login_form, #signup_form {
+  display: none;
+}
+
+input {
+  margin-right: 25px;
+  border: none;
+  font-size: 1em;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+}
+
+input:last-child {
+  margin-right: 0;
+}
+
+input[type="submit"], button {
+  background-color: #999;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:active, input[type="submit"]:hover, input[type="submit"]:focus, button:active, button:hover, button:focus {
+  background-color: #666;
+}

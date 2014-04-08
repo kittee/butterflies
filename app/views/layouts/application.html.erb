@@ -10,23 +10,24 @@
 
 <div id="container">
   <div id="nav">
-    <ul>
-      <li><a href="#" id="new_game">New Game</a></li>
+    <ul id="nav_links">
+      <li><%= link_to("New Game", :root, id: "new_game") %></li>
       
       <% #if current_user %>
         <li><a href="#">Welcome!</a></li>
-        <li><a href="#">Your Stats</a></li>
+        <li><%= link_to("Your Stats")%></li>
       <% #else %>
-        <li><a href="#">Sign In</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><%= link_to("Sign In", :new_login, :remote => true) %></li>
+        <li><%= link_to("Sign Up") %></li>
       <% #end %>
       
-        <li><a href="#">High Scores</a></li>
+        <li><%= link_to("High Scores") %></li>
         
       <% #if current_user %>
-        <li><a href="#">Sign Out</a></li>
+        <li><%= link_to("Sign Out") %></li>
       <% #end %>
     </ul>
+    <div id="login_form" style="display: none;"><%= render :partial => '/logins/form' %></div>
   </div>
   
   <div id="content">
