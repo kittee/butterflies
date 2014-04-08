@@ -66,8 +66,17 @@ a:hover, a:active, a:focus {
 
 #nav a {
   display: inline-block;
-  padding: 0 15px;
+  padding: 5px 15px;
   letter-spacing: 3px;
+}
+
+#new_game {
+  background-color: #999;
+  color: #fff;
+}
+
+#new_game:hover, #new_game:active, #new_game:focus {
+  background-color: #666;
 }
 
 #content {
