@@ -4,6 +4,12 @@
 */
 
 #butterfly {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   margin-top: 25px;
   max-height: 60%;
 }
@@ -39,4 +45,8 @@
 
 .blue {
   fill: #9898ed;
+}
+
+.test {
+  background-color: #9898ed;
 }

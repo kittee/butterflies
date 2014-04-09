@@ -87,10 +87,16 @@ a:hover, a:active, a:focus {
 
 #footer {
   margin-top: 30px;
+  text-align: center;
 }
 
 #footer h1 {
   margin: 0;
+}
+
+#footer p {
+  margin: 0;
+  font-size: 0.75em;
 }
 
 /* Miscellaneous */
