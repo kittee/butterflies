@@ -1,0 +1,8 @@
+$("#nav_links").slideUp(200, function () {
+  $("#signup_form").slideDown(200);
+});
+
+<% if @user.errors.any? %>
+  $("#signup_form p").remove();
+  $("#signup_form").append('<p class="errors"><%= j @user.errors.full_messages.join(", ") %></p>');
+<% end %>

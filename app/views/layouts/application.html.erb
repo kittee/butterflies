@@ -13,21 +13,22 @@
     <ul id="nav_links">
       <li><%= link_to("New Game", :root, id: "new_game") %></li>
       
-      <% #if current_user %>
-        <li><a href="#">Welcome!</a></li>
+      <% if current_user %>
+        <li><%= link_to("Welcome, " + current_user.username + "!", user_path(current_user.username))%></li>
         <li><%= link_to("Your Stats")%></li>
-      <% #else %>
+      <% else %>
         <li><%= link_to("Sign In", :new_login, :remote => true) %></li>
-        <li><%= link_to("Sign Up") %></li>
-      <% #end %>
+        <li><%= link_to("Sign Up", :new_user, :remote => true) %></li>
+      <% end %>
       
         <li><%= link_to("High Scores") %></li>
         
-      <% #if current_user %>
-        <li><%= link_to("Sign Out") %></li>
-      <% #end %>
+      <% if current_user %>
+        <li><%= link_to("Sign Out", login_path(current_user.id), :method => :delete) %></li>
+      <% end %>
     </ul>
-    <div id="login_form" style="display: none;"><%= render :partial => '/logins/form' %></div>
+    <div id="login_form"><%= render :partial => '/logins/form' %></div>
+    <div id="signup_form"><%= render :partial => '/users/form' %></div>
   </div>
   
   <div id="content">

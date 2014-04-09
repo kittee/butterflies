@@ -1,5 +1,15 @@
+<% if current_user %>
+  $("#nav_links").load("/games/new #nav_links");
+<% end %>
+
 if ($("#login_form").is(":visible")) {
   $("#login_form").slideUp(200, function () {
+    $("#login_form p").remove();
     $("#nav_links").slideDown(200);
   });
-}
+} else if ($("#signup_form").is(":visible")) {
+  $("#signup_form").slideUp(200, function () {
+    $("#signup_form p").remove();
+    $("#nav_links").slideDown(200);
+  });
+};
