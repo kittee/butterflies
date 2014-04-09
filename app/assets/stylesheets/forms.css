@@ -29,6 +29,7 @@ input[type="submit"], button {
   cursor: pointer;
   font-weight: bold;
   letter-spacing: 3px;
+  border: none;
 }
 
 input[type="submit"]:active, input[type="submit"]:hover, input[type="submit"]:focus, button:active, button:hover, button:focus {

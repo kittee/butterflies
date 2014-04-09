@@ -4,6 +4,34 @@
 */
 
 #butterfly {
-  margin-top: 30px;
-  max-height: 65%;
+  margin-top: 25px;
+  max-height: 60%;
+}
+
+#game_nav {
+  margin-top: 25px;
+  text-align: center;
+  height: 4em;
+}
+
+#start_button {
+  font-size: 3em;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.red {
+  fill: #f9a198;
+}
+
+.yellow {
+  fill: #fff276;
+}
+
+.green {
+  fill: #7bd6b3;
+}
+
+.blue {
+  fill: #9898ed;
 }
