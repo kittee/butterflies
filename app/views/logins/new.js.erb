@@ -1,3 +1,8 @@
 $("#nav_links").slideUp(200, function () {
   $("#login_form").slideDown(200);
 });
+
+<% if @failed_login %>
+  $("#login_form p").remove();
+  $("#login_form").append('<p class="errors">Invalid login information</p>');
+<% end %>
