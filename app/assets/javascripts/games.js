@@ -12,14 +12,14 @@ $("document").ready(function(){
   });
 
   function tick() {
+    totalSeconds -= 1;
+    updateTimer();
+    
     if (totalSeconds <= 0) {
       clearInterval(timer);
       alert("Time's up!");
       return;
     }
-    
-    totalSeconds -= 1;
-    updateTimer();
   }
   
   function createTimer (time) {
@@ -30,6 +30,13 @@ $("document").ready(function(){
   }
 
   function updateTimer() {
-    $("#game_timer p").text(totalSeconds);
+    seconds_text = function () {
+      if (totalSeconds != 1) {
+        return " seconds";
+      } else {
+        return " second";
+      }
+    };
+    $("#game_timer p").text(totalSeconds + seconds_text());
   }
 });

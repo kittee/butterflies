@@ -20,6 +20,11 @@
   padding-right: 15px;
 }
 
+#game_timer p {
+  font-size: 3em;
+  margin: 0;
+}
+
 .red {
   fill: #f9a198;
 }
