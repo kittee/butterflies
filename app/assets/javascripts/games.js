@@ -273,4 +273,6 @@ $("document").ready(function(){
     score += totalSeconds * level;
     return score;
   }
+  
+  // Saving Levels and Games
 });
