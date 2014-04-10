@@ -15,26 +15,28 @@ $("document").ready(function(){
     gameIsOver = false;
     levelIsOver = false;
     
+    $("#start_button").hide();
     $("#game_timer").hide();
     $("#score_calc").hide();
     $("#score").hide();
     $("#game_messages").removeClass("messages_left").addClass("messages_center");
-    $("#start_button").removeClass("floatright").fadeOut(3000, function() {
+    $("#get_ready").show().fadeOut(3000, function() {
       $("#game_timer").fadeIn(250);
       $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
       createTimer();
       assignSections();
+        $("#butterfly").attr("class", "");
     });
-    $("#start_button").text("Ready");
+    $("#get_ready").text("Ready");
     setTimeout(setText, 1000);
     setTimeout(goText, 2000);
     
     function setText () {
-      $("#start_button").text("Set");
+      $("#get_ready").text("Set");
     }
     
     function goText () {
-      $("#start_button").text("Go!");
+      $("#get_ready").text("Go!");
     }
   });
   
@@ -47,6 +49,7 @@ $("document").ready(function(){
       clearInterval(timer);
       clearInterval(changer);
       $("#game_timer").hide().text("Game Over").fadeIn(1000);
+        $("#butterfly").attr("class", "half_opacity");
       gameIsOver = true;
       return;
     }
@@ -112,6 +115,7 @@ $("document").ready(function(){
         $(this).attr("class", "red");
       }
       if (levelWon()) {
+        $("#butterfly").attr("class", "half_opacity");
         levelIsOver = true;
         clearInterval(timer);
         clearInterval(changer);

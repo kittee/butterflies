@@ -12,6 +12,7 @@ input {
   font-size: 1em;
   letter-spacing: 1px;
   padding: 5px 10px;
+  outline: none;
 }
 
 input:last-child {

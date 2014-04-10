@@ -7,7 +7,10 @@
   user-select: none;
   margin-top: 25px;
   max-height: 60%;
-  
+}
+
+.half_opacity {
+  opacity: 0.5;
 }
 
 #sections {
@@ -36,13 +39,20 @@
   float: left;
 }
 
-#start_button {
+#start_button, #get_ready {
   display: block;
+  width: 25%;
   margin: 0 auto;
   text-align: center;
   font-size: 3em;
   padding-left: 15px;
   padding-right: 15px;
+  background-color: #999;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 3px;
+  border: none;
+  cursor: pointer;
 }
 
 #game_timer {
