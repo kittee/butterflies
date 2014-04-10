@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.new
+    @user = User.find_by_username(params[:username])
+    @personal_top_games = @user.games.order('final_score').reverse[0..9]
   end
 end

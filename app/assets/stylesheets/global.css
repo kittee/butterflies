@@ -17,15 +17,18 @@ h1, h2, h3, h4, h5, h6, p, li, td, th, label, input {
   color: #999;
 }
 
-h1 {
+h1, h2 {
   letter-spacing: 0.2em;
   font-weight: normal;
   font-size: 3em;
   text-align: center;
+}
+
+h1 {
   font-variant: small-caps;
 }
 
-h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
   font-weight: bold;
   letter-spacing: 3px;
 }
@@ -77,16 +80,24 @@ a:hover, a:active, a:focus {
   letter-spacing: 3px;
 }
 
-#new_game {
-  background-color: #999;
-  color: #fff;
-}
-
-#new_game:hover, #new_game:active, #new_game:focus {
-  background-color: #666;
-}
-
 #content {
+}
+
+#content table {
+  width: 100%;
+}
+
+#content th {
+  text-align: left;
+  font-size: 1.25em;
+}
+
+#content th:last-child, #content td:last-child {
+  text-align: right;
+}
+
+#content td {
+  padding: 5px;
 }
 
 #footer {

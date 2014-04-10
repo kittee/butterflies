@@ -6,7 +6,7 @@
   -ms-user-select: none;
   user-select: none;
   margin-top: 25px;
-  max-height: 60%;
+  max-height: 55%;
 }
 
 .intro_animation {
@@ -49,13 +49,22 @@
 }
 
 #game_nav {
-  margin-top: 15px;
+  margin-top: 25px;
   height: 5em;
 }
 
 #game_nav p {
   font-size: 1.25em;
   margin: 0 20px 0 0;
+}
+
+#new_game {
+  background-color: #999;
+  color: #fff;
+}
+
+#new_game:hover, #new_game:active, #new_game:focus {
+  background-color: #666;
 }
 
 #game_messages {
@@ -95,6 +104,10 @@
 
 #score {
   font-weight: bold;
+}
+
+#user_info {
+  display: none;
 }
 
 .red {

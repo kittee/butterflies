@@ -1,0 +1,21 @@
+<h2>High Scores</h2>
+
+<table>
+  <thead>
+    <th>User</th>
+    <th>Score</th>
+    <th>Level Reached</th>
+    <th>Date</th>
+  </thead>
+  <tbody>
+    <% @all_top_games.each do |game| %>
+      <tr>
+        <% username = User.find(game.user_id).username %>
+        <td><%= link_to username, user_path(username) %></td>
+        <td><%= game.final_score %></td>
+        <td><%= game.levels.length + 1 %></td>
+        <td><%= game.pretty_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

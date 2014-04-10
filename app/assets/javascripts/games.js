@@ -13,6 +13,10 @@ $("document").ready(function(){
     gameIsOver = false;
     levelIsOver = false;
     
+    if (score === 0) {
+      saveGame();
+    }
+    
     $("#butterfly").fadeTo(3000, 0, function () {
       $("#butterfly").attr("class", ""); // Removes bouncing from the intro page
     });
@@ -56,6 +60,7 @@ $("document").ready(function(){
       $("#game_timer").hide().text("Game Over").fadeIn(1000);
       $("#butterfly").fadeTo(500, 0.5);
       gameIsOver = true;
+      saveGame();
       return;
     }
   }
@@ -126,6 +131,7 @@ $("document").ready(function(){
         clearInterval(timer);
         clearInterval(changer);
         calculateScore();
+        saveGame();
         levelWonMessages();
       }
     }
@@ -275,4 +281,15 @@ $("document").ready(function(){
   }
   
   // Saving Levels and Games
+  
+  function saveGame () {
+    if ($('#game_save_form form').hasClass("edit_game")) {
+      $("#game_final_score").val(score);
+      $("#game_levels_attributes_0_level_num").val(level);
+      $("#game_levels_attributes_0_score").val(totalSeconds * level);
+      $("#game_levels_attributes_0_time_elapsed").val(32 - level*2 - totalSeconds);
+    }
+    
+    $('#game_save_form input[type="submit"]').trigger("click");
+  }
 });

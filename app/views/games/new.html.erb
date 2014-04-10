@@ -49,3 +49,7 @@
 		412,88 409.1,127.4 449.5,106 	"/>
 </g>
 </svg>
+
+<% if current_user %>
+  <div id="game_save_form"><%= render :partial => 'new_game_form' %></div>
+<% end %>

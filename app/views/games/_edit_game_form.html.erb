@@ -1,0 +1,15 @@
+<%= form_for @game, :remote => true do |game| %>
+
+  <%= game.hidden_field :user_id %>
+  <%= game.hidden_field :final_score %>
+  
+  <%= game.fields_for :levels, @level do |level| %>
+    <%= level.hidden_field :game_id, :value => @game.id %>
+    <%= level.hidden_field :level_num %>
+    <%= level.hidden_field :score %>
+    <%= level.hidden_field :time_elapsed %>
+  <% end %>
+  
+  <%= game.submit %>
+
+<% end %>
