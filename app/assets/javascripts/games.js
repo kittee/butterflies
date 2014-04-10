@@ -252,7 +252,7 @@ $("document").ready(function(){
       $("#score").text("New Score: " + score).fadeIn(1000);
     }, 3000);
     setTimeout(function () {
-      $("#start_button").addClass("floatright").text("Next Level").fadeIn(1000);
+      $("#start_button").addClass("floatright").text("Next").fadeIn(1000);
     }, 4500);
   }
   
