@@ -1,5 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 $("document").ready(function(){
   var totalSeconds;
   var timer;
@@ -15,6 +13,10 @@ $("document").ready(function(){
     gameIsOver = false;
     levelIsOver = false;
     
+    $("#butterfly").fadeTo(3000, 0, function () {
+      $("#butterfly").attr("class", ""); // Removes bouncing from the intro page
+    });
+    
     $("#start_button").hide();
     $("#game_timer").hide();
     $("#score_calc").hide();
@@ -25,8 +27,10 @@ $("document").ready(function(){
       $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
       createTimer();
       assignSections();
-      $("#butterfly").fadeTo(250, 1);
+      
+        $("#butterfly").fadeTo(250, 1);
     });
+    
     $("#get_ready").text("Ready");
     setTimeout(setText, 1000);
     setTimeout(goText, 2000);
@@ -257,7 +261,7 @@ $("document").ready(function(){
       $("#score_calc").text("Points Earned: " + totalSeconds + " (time left) x " + level + " (level) = " + (totalSeconds * level)).fadeIn(1000);
     }, 1500);
     setTimeout(function () {
-      $("#score").text("New Score: " + score).fadeIn(1000);
+      $("#score").text("Total Score: " + score).fadeIn(1000);
     }, 3000);
     setTimeout(function () {
       $("#start_button").addClass("floatright").text("Next").fadeIn(1000);
