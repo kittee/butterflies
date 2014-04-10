@@ -110,3 +110,11 @@ a:hover, a:active, a:focus {
 .clearfix:after {
   clear: both;
 }
+
+.floatright {
+  float: right;
+}
+
+.floatleft {
+  float: left;
+}

@@ -3,17 +3,26 @@
 $("document").ready(function(){
   var totalSeconds;
   var timer;
+  var level = 0;
+  var score = 0;
   var gameIsOver = true;
   var levelIsOver = true;
+  var colors = ["red", "yellow", "green", "blue"];
   
   // Main Flow
   $("#start_button").click(function () {
+    level++;
     gameIsOver = false;
     levelIsOver = false;
     
-    $("#start_button").fadeOut(3000, function() {
-      $("#game_nav").append('<div id="game_timer"><p></p></div>');
-      createTimer(30);
+    $("#game_timer").hide();
+    $("#score_calc").hide();
+    $("#score").hide();
+    $("#game_messages").removeClass("messages_left").addClass("messages_center");
+    $("#start_button").removeClass("floatright").fadeOut(3000, function() {
+      $("#game_timer").fadeIn(250);
+      $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
+      createTimer();
       assignSections();
     });
     $("#start_button").text("Ready");
@@ -36,17 +45,23 @@ $("document").ready(function(){
     
     if (totalSeconds <= 0) {
       clearInterval(timer);
-      $("#game_timer p").text("Game Over");
+      clearInterval(changer);
+      $("#game_timer").hide().text("Game Over").fadeIn(1000);
       gameIsOver = true;
       return;
     }
   }
   
-  function createTimer (time) {
-    totalSeconds = time;
+  function createTimer () {
+    totalSeconds = 32 - level*2;
+    
+    if (totalSeconds < 5) {
+      totalSeconds = 5;
+    }
 
     updateTimer();
     timer = setInterval(tick, 1000);
+    changer = setInterval(randomChange, 3000);
   }
 
   function updateTimer() {
@@ -57,7 +72,7 @@ $("document").ready(function(){
         return " second";
       }
     };
-    $("#game_timer p").text(totalSeconds + seconds_text());
+    $("#game_timer").text(totalSeconds + seconds_text());
   }
   
   // Color Changing Mechanics
@@ -99,7 +114,9 @@ $("document").ready(function(){
       if (levelWon()) {
         levelIsOver = true;
         clearInterval(timer);
-        $("#game_timer p").text("Great job!");
+        clearInterval(changer);
+        calculateScore();
+        levelWonMessages();
       }
     }
   }
@@ -133,15 +150,68 @@ $("document").ready(function(){
   ["red", "red", "red", "yellow", "yellow", 
   "yellow", "green", "green", "blue", "blue", 
   "blue", "blue", "blue", "green", "green",
-  "green", "yellow", "yellow", "red", "red"]
+  "green", "yellow", "yellow", "red", "red"];
   
-  var patterns = [pattern0, pattern1, pattern2, pattern3, pattern4];
+  var pattern5 =
+  ["blue", "blue", "blue", "blue", "blue", 
+  "blue", "blue", "blue", "blue", "blue", 
+  "blue", "blue", "blue", "blue", "blue", 
+  "blue", "blue", "blue", "blue", "blue"];
+  
+  var pattern6 =
+  ["green", "yellow", "yellow", "yellow", "yellow", 
+  "green", "green", "yellow", "yellow", "green", 
+  "green", "yellow", "yellow", "yellow", "yellow", 
+  "green", "green", "yellow", "yellow", "green"];
+  
+  var pattern7 =
+  ["red", "red", "red", "red", "red", 
+  "red", "red", "red", "red", "red", 
+  "blue", "blue", "blue", "blue", "blue", 
+  "blue", "blue", "blue", "blue", "blue"];
+  
+  var pattern8 =
+  ["yellow", "yellow", "yellow", "yellow", "yellow", 
+  "yellow", "yellow", "yellow", "yellow", "yellow", 
+  "yellow", "yellow", "yellow", "yellow", "yellow", 
+  "yellow", "yellow", "yellow", "yellow", "yellow"];
+  
+  var pattern9 =
+  ["yellow", "red", "yellow", "yellow", "red",
+  "yellow", "yellow", "green", "green", "yellow",
+  "yellow", "red", "yellow", "yellow", "red",
+  "yellow", "yellow", "green", "green", "yellow"];
+  
+  var pattern10 =
+  ["blue", "red", "blue", "blue", "blue",
+  "blue", "red", "red", "red", "red",
+  "blue", "red", "blue", "blue", "blue",
+  "blue", "red", "red", "red", "red"];
+  
+  var pattern11 =
+  ["green", "green", "red", "green", "green",
+  "green", "green", "green", "red", "green",
+  "blue", "blue", "yellow", "blue", "blue",
+  "blue", "blue", "blue", "yellow", "blue"];
+  
+  var patterns =
+  [pattern0, pattern1, pattern2, pattern3, pattern4,
+  pattern5, pattern6, pattern7, pattern8, pattern9,
+  pattern10, pattern11];
   
   function assignSections () {
     var chosenPattern = patterns[Math.floor(Math.random()*patterns.length)];
     for (var i = 0; i < 20; i++) {
       $("#sect_" + i).attr("class", chosenPattern[i]);
     };
+  }
+  
+  // Computer Randomness
+  
+  function randomChange() {
+    var randNum = Math.floor(Math.random()*19);
+    var randColor = colors[Math.floor(Math.random()*colors.length)];
+    $("#sect_" + randNum).attr("class", randColor);
   }
   
   // Win Logic
@@ -157,8 +227,8 @@ $("document").ready(function(){
   }
   
   function nonLinearMatch () {
-    for (var i = 0; i < nonLinearMatch.length; i++) {
-      if ($("#sect_" + nonLinearPairs[i][0]).attr("class") == $("#sect_" + nonLinearPairs[i][1])) {
+    for (var i = 0; i < nonLinearPairs.length; i++) {
+      if ($("#sect_" + nonLinearPairs[i][0]).attr("class") == $("#sect_" + nonLinearPairs[i][1]).attr("class")) {
         return true;
       }
     };
@@ -169,5 +239,27 @@ $("document").ready(function(){
     if (!linearMatch() && !nonLinearMatch()) {
       return true;
     }
-  }  
+  }
+  
+  function levelWonMessages () {
+    $("#score").hide();
+    $("#game_messages").removeClass("messages_center").addClass("messages_left");
+    $("#game_timer").hide().text("Great job!").fadeIn(1000);
+    setTimeout(function () {
+      $("#score_calc").text("Points Earned: " + totalSeconds + " (time left) x " + level + " (level) = " + (totalSeconds * level)).fadeIn(1000);
+    }, 1500);
+    setTimeout(function () {
+      $("#score").text("New Score: " + score).fadeIn(1000);
+    }, 3000);
+    setTimeout(function () {
+      $("#start_button").addClass("floatright").text("Next Level").fadeIn(1000);
+    }, 4500);
+  }
+  
+  // Scoring Logic
+  
+  function calculateScore () {
+    score += totalSeconds * level;
+    return score;
+  }
 });

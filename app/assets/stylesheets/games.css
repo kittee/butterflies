@@ -14,21 +14,50 @@
   max-height: 60%;
 }
 
+#sections {
+  cursor: pointer;
+}
+
 #game_nav {
-  margin-top: 25px;
+  margin-top: 15px;
+  height: 5em;
+}
+
+#game_nav p {
+  font-size: 1.25em;
+  margin: 0 20px 0 0;
+}
+
+#game_messages {
+}
+
+.messages_center {
   text-align: center;
-  height: 4em;
+}
+
+.messages_left {
+  text-align: left;
+  float: left;
 }
 
 #start_button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
   font-size: 3em;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-#game_timer p {
-  font-size: 3em;
-  margin: 0;
+#game_timer {
+  font-weight: bold;
+}
+
+#score_calc {
+}
+
+#score {
+  font-weight: bold;
 }
 
 .red {
