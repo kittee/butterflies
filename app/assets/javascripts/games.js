@@ -25,7 +25,7 @@ $("document").ready(function(){
       $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
       createTimer();
       assignSections();
-        $("#butterfly").attr("class", "");
+      $("#butterfly").fadeTo(250, 1);
     });
     $("#get_ready").text("Ready");
     setTimeout(setText, 1000);
@@ -41,6 +41,7 @@ $("document").ready(function(){
   });
   
   // Timer Mechanics
+  // The tick method also determines when the game is lost.
   function tick() {
     totalSeconds -= 1;
     updateTimer();
@@ -49,7 +50,7 @@ $("document").ready(function(){
       clearInterval(timer);
       clearInterval(changer);
       $("#game_timer").hide().text("Game Over").fadeIn(1000);
-        $("#butterfly").attr("class", "half_opacity");
+      $("#butterfly").fadeTo(500, 0.5);
       gameIsOver = true;
       return;
     }
@@ -58,8 +59,8 @@ $("document").ready(function(){
   function createTimer () {
     totalSeconds = 32 - level*2;
     
-    if (totalSeconds < 5) {
-      totalSeconds = 5;
+    if (totalSeconds < 10) {
+      totalSeconds = 7;
     }
 
     updateTimer();
@@ -79,6 +80,7 @@ $("document").ready(function(){
   }
   
   // Color Changing Mechanics
+  // After every color change, the game looks to see if the game has been won yet.
   $("#sections polygon").click(changeColor);
   
   // function changeColor () {
@@ -115,7 +117,7 @@ $("document").ready(function(){
         $(this).attr("class", "red");
       }
       if (levelWon()) {
-        $("#butterfly").attr("class", "half_opacity");
+        $("#butterfly").fadeTo(500, 0.5);
         levelIsOver = true;
         clearInterval(timer);
         clearInterval(changer);
@@ -242,6 +244,8 @@ $("document").ready(function(){
   function levelWon () {
     if (!linearMatch() && !nonLinearMatch()) {
       return true;
+    } else {
+      return false;
     }
   }
   
@@ -261,7 +265,6 @@ $("document").ready(function(){
   }
   
   // Scoring Logic
-  
   function calculateScore () {
     score += totalSeconds * level;
     return score;

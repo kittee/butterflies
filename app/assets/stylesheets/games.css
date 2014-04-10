@@ -9,8 +9,39 @@
   max-height: 60%;
 }
 
-.half_opacity {
-  opacity: 0.5;
+.intro_animation {
+  -webkit-animation: bobble 10s infinite;
+  animation: bobble 10s infinite;
+}
+
+@keyframes bobble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform:translateY(-30px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform:translateY(-30px);
+  }
+}
+
+@-webkit-keyframes bobble {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  25% {
+    -webkit-transform:translateY(-30px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+  }
+  75% {
+    -webkit-transform:translateY(-30px);
+  }
 }
 
 #sections {
