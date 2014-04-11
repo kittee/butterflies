@@ -292,4 +292,14 @@ $("document").ready(function(){
     
     $('#game_save_form input[type="submit"]').trigger("click");
   }
+  
+  // Toggle Music and Sound
+  
+  $("#music").click(function () {
+    if ($("#music a").hasClass("turned_off")) {
+      $("#music a").removeClass("turned_off");
+    } else {
+      $("#music a").addClass("turned_off");
+    }
+  });
 });

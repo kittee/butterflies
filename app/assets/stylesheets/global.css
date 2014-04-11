@@ -54,7 +54,7 @@ a:hover, a:active, a:focus {
   width: 50%;
   min-width: 700px;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 #nav {
@@ -78,6 +78,24 @@ a:hover, a:active, a:focus {
   display: inline-block;
   padding: 5px 15px;
   letter-spacing: 3px;
+}
+
+#music a {
+  background-image: url('icon_music.png');
+  width: 0px;
+  height: 0;
+  padding: 0 35px 35px 0;
+  overflow: hidden;
+  position: relative;
+  top: 10px;
+}
+
+#music a:hover, #music a:active, #music a:focus {
+  background-position: -36px 0;
+}
+
+.turned_off {
+  background-position: -72px 0;
 }
 
 #content {

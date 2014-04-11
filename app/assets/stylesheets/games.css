@@ -95,6 +95,10 @@
   cursor: pointer;
 }
 
+#start_button:hover, #start_button:active, #start_button:focus {
+  background-color: #666;
+}
+
 #game_timer {
   font-weight: bold;
 }
