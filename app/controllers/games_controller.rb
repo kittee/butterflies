@@ -31,6 +31,8 @@ class GamesController < ApplicationController
       @all_top_games << game
     end
     
+    @all_top_games.sort! { |a, b| b.final_score <=> a.final_score }
+    
     @all_top_games = @all_top_games[0..9]
   end
   

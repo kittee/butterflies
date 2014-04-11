@@ -1,4 +1,18 @@
 $("document").ready(function(){
+  var lydiaSong = new Howl({
+    urls: ['/assets/lydia_butterfly.mp3'],
+    loop: true
+  });
+  
+  if ($("#game_nav").length && !$("#music a").hasClass("turned_off")) {
+    lydiaSong.play();
+  }
+  
+  var flightSong = new Howl({
+    urls: ['/assets/flight_over_oceans.mp3'],
+    loop: true
+  });
+  
   var totalSeconds;
   var timer;
   var level = 0;
@@ -15,6 +29,7 @@ $("document").ready(function(){
     
     if (score === 0) {
       saveGame();
+      lydiaSong.fade(1.0, 0.0, 2000);
     }
     
     $("#butterfly").fadeTo(3000, 0, function () {
@@ -31,8 +46,11 @@ $("document").ready(function(){
       $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
       createTimer();
       assignSections();
+      $("#butterfly").fadeTo(250, 1);
       
-        $("#butterfly").fadeTo(250, 1);
+      if (!$("#music a").hasClass("turned_off") && score === 0) {
+        flightSong.play(); 
+      }
     });
     
     $("#get_ready").text("Ready");
@@ -92,26 +110,6 @@ $("document").ready(function(){
   // After every color change, the game looks to see if the game has been won yet.
   $("#sections polygon").click(changeColor);
   
-  // function changeColor () {
-  //   console.log("Colors!");
-  //   if ($(this).hasClass("red")) {
-  //     console.log(this);
-  //     console.log("It's red");
-  //     $(this).switchClass("red", "yellow", 200);
-  //   } else if ($(this).hasClass("yellow")) {
-  //     $(this).switchClass("yellow", "green", 200);
-  //   } else if ($(this).hasClass("green")) {
-  //     $(this).switchClass("green", "blue", 200);
-  //   } else if ($(this).hasClass("blue")) {
-  //     $(this).switchClass("blue", "red", 200);
-  //   } else {
-  //     console.log("No color");
-  //     console.log(this);
-  //     $("body").toggleClass("test");
-  //     $("#sect_0").toggleClass("red");
-  //   }
-  // };
-  
   function changeColor () {
     if (!gameIsOver && !levelIsOver) {
       if ($(this).attr("class") == "red") {
@@ -122,9 +120,12 @@ $("document").ready(function(){
         $(this).attr("class", "blue");
       } else if ($(this).attr("class") == "blue") {
         $(this).attr("class", "red");
-      } else {
-        $(this).attr("class", "red");
       }
+      
+      if (!$("#music a").hasClass("turned_off")) {
+        // put a sound effect here later
+      }
+      
       if (levelWon()) {
         $("#butterfly").fadeTo(500, 0.5);
         levelIsOver = true;
@@ -298,8 +299,17 @@ $("document").ready(function(){
   $("#music").click(function () {
     if ($("#music a").hasClass("turned_off")) {
       $("#music a").removeClass("turned_off");
+      
+      if (gameIsOver) {
+        lydiaSong.play();
+      } else {
+        flightSong.play();
+      }
+      
     } else {
       $("#music a").addClass("turned_off");
+      lydiaSong.stop();
+      flightSong.stop();
     }
   });
 });
