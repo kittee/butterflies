@@ -28,7 +28,9 @@ class GamesController < ApplicationController
     
     users.each do |user|
       game = user.games.order('final_score').reverse[0]
-      @all_top_games << game
+      if game
+        @all_top_games << game
+      end
     end
     
     @all_top_games.sort! { |a, b| b.final_score <=> a.final_score }
