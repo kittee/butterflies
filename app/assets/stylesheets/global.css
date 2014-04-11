@@ -40,7 +40,6 @@ p, li, td, th, label {
 /* Links */
 
 a {
-  text-decoration: none;
   color: #999;
 }
 
@@ -75,6 +74,7 @@ a:hover, a:active, a:focus {
 }
 
 #nav a {
+  text-decoration: none;
   display: inline-block;
   padding: 5px 15px;
   letter-spacing: 3px;
@@ -128,8 +128,8 @@ a:hover, a:active, a:focus {
 }
 
 #footer p {
-  margin: 0;
-  font-size: 0.75em;
+  margin: 0 0 0.5em 0;
+  font-size: 0.8em;
 }
 
 /* Miscellaneous */
