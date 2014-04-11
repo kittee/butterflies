@@ -1,5 +1,6 @@
 <% if current_user %>
   $("#nav_links").load("/games/new #nav_links");
+  $("#content").append('<div id="game_save_form"><%= j render :partial => "new_game_form" %></div>');
 <% end %>
 
 if ($("#login_form").is(":visible")) {

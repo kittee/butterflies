@@ -1,3 +1,4 @@
 $("#signup_form").slideUp(200, function () {
   $("#nav_links").load("/games/new #nav_links").slideDown(200);
+  $("#content").append('<div id="game_save_form"><%= j render :partial => "new_game_form" %></div>')
 });
