@@ -126,15 +126,7 @@ $("document").ready(function(){
         // put a sound effect here later
       }
       
-      if (levelWon()) {
-        $("#butterfly").fadeTo(500, 0.5);
-        levelIsOver = true;
-        clearInterval(timer);
-        clearInterval(changer);
-        calculateScore();
-        saveGame();
-        levelWonMessages();
-      }
+      levelWonCheck();
     }
   }
   
@@ -229,6 +221,7 @@ $("document").ready(function(){
     var randNum = Math.floor(Math.random()*19);
     var randColor = colors[Math.floor(Math.random()*colors.length)];
     $("#sect_" + randNum).attr("class", randColor);
+    levelWonCheck();
   }
   
   // Win Logic
@@ -252,11 +245,15 @@ $("document").ready(function(){
     return false;
   }
   
-  function levelWon () {
+  function levelWonCheck () {
     if (!linearMatch() && !nonLinearMatch()) {
-      return true;
-    } else {
-      return false;
+      $("#butterfly").fadeTo(500, 0.5);
+      levelIsOver = true;
+      clearInterval(timer);
+      clearInterval(changer);
+      calculateScore();
+      saveGame();
+      levelWonMessages();
     }
   }
   
