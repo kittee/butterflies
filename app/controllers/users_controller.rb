@@ -9,9 +9,8 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       session[:username] = @user.username
-      respond_to do |format|
-        format.js
-      end
+      SiteMailer.welcome(@user).deliver
+      redirect_to :new_game
     else
       render "new"
     end
