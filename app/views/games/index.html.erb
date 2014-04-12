@@ -13,7 +13,7 @@
         <% username = User.find(game.user_id).username %>
         <td><%= link_to username, user_path(username) %></td>
         <td><%= game.final_score %></td>
-        <td><%= game.levels.length + 1 %></td>
+        <td><%= game.levels.length %></td>
         <td><%= game.pretty_time %></td>
       </tr>
     <% end %>

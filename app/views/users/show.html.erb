@@ -10,7 +10,7 @@
     <% @personal_top_games.each do |game| %>
       <tr>
         <td><%= game.final_score %></td>
-        <td><%= game.levels.length + 1 %></td>
+        <td><%= game.levels.length %></td>
         <td><%= game.pretty_time %></td>
       </tr>
     <% end %>

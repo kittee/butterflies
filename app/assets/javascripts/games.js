@@ -282,12 +282,12 @@ $("document").ready(function(){
   
   function saveGame () {
     if ($('#game_save_form form').hasClass("edit_game")) {
-      $("#game_final_score").val(score);
       $("#game_levels_attributes_0_level_num").val(level);
       $("#game_levels_attributes_0_score").val(totalSeconds * level);
       $("#game_levels_attributes_0_time_elapsed").val(32 - level*2 - totalSeconds);
     }
-    
+
+    $("#game_final_score").val(score);
     $('#game_save_form input[type="submit"]').trigger("click");
   }
   

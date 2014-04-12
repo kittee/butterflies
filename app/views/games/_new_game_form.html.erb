@@ -1,7 +1,7 @@
 <%= form_for @game, :remote => true do |game| %>
 
   <%= game.hidden_field :user_id, :value => "#{session[:user_id]}" %>
-  <%= game.hidden_field :final_score, :value => 0 %>
+  <%= game.hidden_field :final_score %>
   
   <%= game.submit %>
 
