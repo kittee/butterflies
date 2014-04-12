@@ -22,7 +22,7 @@ $("document").ready(function(){
   var colors = ["red", "yellow", "green", "blue"];
   
   // Main Flow
-  $("#start_button").click(function () {
+  $("#start_button").on("tap", function () {
     level++;
     gameIsOver = false;
     levelIsOver = false;
@@ -108,7 +108,7 @@ $("document").ready(function(){
   
   // Color Changing Mechanics
   // After every color change, the game looks to see if the game has been won yet.
-  $("#sections polygon").click(changeColor);
+  $("#sections polygon").on("tap", changeColor);
   
   function changeColor () {
     if (!gameIsOver && !levelIsOver) {
@@ -293,7 +293,7 @@ $("document").ready(function(){
   
   // Toggle Music and Sound
   
-  $("#music").click(function () {
+  $("#music").on("tap", function () {
     if ($("#music a").hasClass("turned_off")) {
       $("#music a").removeClass("turned_off");
       

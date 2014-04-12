@@ -42,6 +42,6 @@ input[type="submit"]:active, input[type="submit"]:hover, input[type="submit"]:fo
   margin-top: 3px;
 }
 
-#game_save_form input {
+#game_save_form {
   display: none;
 }
