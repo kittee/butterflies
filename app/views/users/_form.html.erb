@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for user, :remote => true do |f| %>
 
   <%= f.text_field :username, placeholder: "Username" %>
   <%= f.text_field :email, placeholder: "Email" %>
@@ -9,8 +9,4 @@
 
 <%= form_tag(:root, method: :get, remote: true) do %>
   <%= submit_tag "Cancel" %>
-<% end %>
-
-<% if @user.errors.any? %>
-  <p>Uh oh</p>
 <% end %>

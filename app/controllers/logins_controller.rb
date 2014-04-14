@@ -16,6 +16,7 @@ class LoginsController < ApplicationController
       redirect_to :new_game
     else
       @failed_login = true;
+      
       render "new"
     end
   end
