@@ -51,5 +51,5 @@
 </svg>
 
 <% if current_user %>
-  <div id="game_save_form"><%= render :partial => 'new_game_form' %></div>
+  <div id="game_save_form"><%= render :partial => 'new_game_form', :locals => { :game => @game } %></div>
 <% end %>
