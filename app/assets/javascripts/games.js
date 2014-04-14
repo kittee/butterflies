@@ -218,7 +218,7 @@ $("document").ready(function(){
   // Computer Randomness
   
   function randomChange() {
-    var randNum = Math.floor(Math.random()*19);
+    var randNum = Math.floor(Math.random()*20);
     var randColor = colors[Math.floor(Math.random()*colors.length)];
     $("#sect_" + randNum).attr("class", randColor);
     levelWonCheck();
