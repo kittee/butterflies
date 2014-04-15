@@ -60,7 +60,7 @@ class GamesController < ApplicationController
     # @all_top_games.sort! { |a, b| b.final_score <=> a.final_score }
     # @all_top_games = @all_top_games[0..9]
     
-    @all_top_games = Game.get_all_top_games(all_games)
+    @all_top_games = Game.get_all_top_games(all_games, true)
   end
   
   def edit

@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     
     #@personal_top_games = Game.joins(:user, :levels).select("games.*, levels.level_num AS level_num").where("games.user_id" => @user.id).order('final_score').reverse[0..9]
     
-    @personal_top_games = Game.includes(:levels).where("games.user_id" => @user.id).order('final_score DESC')[0..9]
+    personal_games = Game.get_personal_games(@user)
+    @personal_top_games = Game.get_all_top_games(personal_games)
   end
 end
