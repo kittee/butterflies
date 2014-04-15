@@ -12,7 +12,7 @@
       <tr>
         <td><%= link_to game.username, user_path(game.username) %></td>
         <td><%= game.final_score %></td>
-        <td><%= @all_games.where("game_id = ?", game.game_id).length %></td>
+        <td><%= game.level_num %></td>
         <td><%= game.updated_at %></td>
       </tr>
     <% end %>
