@@ -6,7 +6,9 @@ Lydia Butterfly is a speed-based color puzzle game, dedicated to my niece Lydia.
 
 [Play it here!](http://lydiab.herokuapp.com/)
 
-##Directions
+##How to Play
+
+###Directions
 
 1. Click Start.
 2. Click sections to change their color.
@@ -16,6 +18,12 @@ An example of a winning game:
 
 ![Winning game example](https://31.media.tumblr.com/f2425ce66787230b819556b2d03858fc/tumblr_inline_n40a8mXizS1s6jjx7.jpg)
 
+###Other Tips
+
+- Level 1 starts you off with 30 sections to solve the puzzle. Each subsequent level decreases your time limit by 2 seconds, down to a minimum of 7 sections.
+- The computer will randomly change colors on the butterfly, so watch out!
+- You can play as much as you would like without signing up, but if you do sign up, the game will keep track of your personal stats, and you will also be eligible for the high score table.
+
 ##Suggested Browsers
 
 ###Good:
@@ -24,7 +32,7 @@ An example of a winning game:
 
 ###Eh:
 - Firefox (Mac)
-- Anything on mobile (it's fairly slow)
+- Safari (iPhone) (it's fairly slow)
 
 ###Blech:
 - Firefox (Windows)
@@ -33,8 +41,12 @@ An example of a winning game:
 ###Untested:
 - Safari (Windows)
 - Opera
+- Anything else not explicitly listed in the "Good", "Eh", and "Blech" sections
 
 ##The Future of Lydia Butterfly
 
 -Optimize for mobile
 -Optimize for other browsers
+-Mobile app maybe?
+
+I'm constantly trying to make the Lydia Butterfly experience better, so please report any bugs or suggestions in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)! Thanks!
