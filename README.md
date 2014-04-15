@@ -36,7 +36,7 @@ An example of a winning game:
 
 ###Blech:
 - Firefox (Windows)
-- Internext Explorer (Windows)
+- Internet Explorer (Windows)
 
 ###Untested:
 - Safari (Windows)
@@ -50,4 +50,4 @@ An example of a winning game:
 - Mobile app maybe?
 - More in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)
 
-I'm constantly trying to make the Lydia Butterfly experience better, so please report any bugs or suggestions in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)! Thanks!
+I'm constantly trying to make the Lydia Butterfly experience better, so please report any bugs or suggestions in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)! Please be as descriptive about bugs as possible (what you need that lead up to the bug, pictures of glitches, etc.). Thanks!
