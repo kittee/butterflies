@@ -4,9 +4,9 @@ class Game < ActiveRecord::Base
   has_many :levels
   accepts_nested_attributes_for :levels
   
-  scope :get_personal_games, ->(user) { joins(:levels).where("user_id = ?", user.id).select("games.final_score AS final_score, games.id AS game_id, games.updated_at AS updated_at, levels.level_num AS level_num").order('final_score DESC').order('level_num DESC') }
+  scope :get_personal_games, ->(user) { joins(:levels).where("user_id = ?", user.id).select("games.final_score AS final_score, games.id AS game_id, games.updated_at AS updated_at, levels.level_num AS level_num").order('final_score DESC').order('game_id DESC').order('level_num DESC') }
   
-  scope :get_all_games, -> { joins(:user, :levels).select("users.username AS username, games.final_score AS final_score, games.id AS game_id, games.updated_at AS updated_at, levels.level_num AS level_num").order('username').order('final_score DESC').order('level_num DESC') }
+  scope :get_all_games, -> { joins(:user, :levels).select("users.username AS username, games.final_score AS final_score, games.id AS game_id, games.updated_at AS updated_at, levels.level_num AS level_num").order('username').order('final_score DESC').order('game_id DESC').order('level_num DESC') }
   
   # Takes an ActiveRecord joined table and removed duplicates.
   #
