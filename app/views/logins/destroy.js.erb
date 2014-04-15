@@ -2,4 +2,6 @@ console.log("DESTROY EVERYTHING");
 
 $("#nav_links").slideUp(200, function () {
   $("#nav_links").load("/games/new #nav_links").slideDown(200);
+  $("#login_form").append("<%= j render '/logins/new' %>");
+  $("#signup_form").append("<%= j render '/users/new %>")
 });

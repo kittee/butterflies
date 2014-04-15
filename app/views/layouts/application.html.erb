@@ -27,8 +27,16 @@
       <% end %>
         <li id="music"><a href="#" class="turned_off"></a></li>
     </ul>
-    <div id="login_form"><%= render :partial => '/logins/form' %></div>
-    <div id="signup_form"><%= render :partial => '/users/form', :locals => { :user => @user } %></div>
+    <div id="login_form">
+      <% if !current_user %>
+        <%= render :partial => '/logins/form' %>
+      <% end %>
+    </div>
+    <div id="signup_form">
+      <% if !current_user %>
+        <%= render :partial => '/users/form', :locals => { :user => @user } %>
+      <% end %>
+    </div>
   </div>
   
   <div id="content">
