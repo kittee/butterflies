@@ -20,7 +20,7 @@ An example of a winning game:
 
 ###Other Tips
 
-- Level 1 starts you off with 30 sections to solve the puzzle. Each subsequent level decreases your time limit by 2 seconds, down to a minimum of 7 sections.
+- Level 1 gives you 30 seconds to solve the puzzle. Each subsequent level decreases your time limit by 2 seconds, down to a minimum of 7 seconds.
 - The computer will randomly change colors on the butterfly, so watch out!
 - You can play as much as you would like without signing up, but if you do sign up, the game will keep track of your personal stats, and you will also be eligible for the high score table.
 
@@ -45,8 +45,9 @@ An example of a winning game:
 
 ##The Future of Lydia Butterfly
 
--Optimize for mobile
--Optimize for other browsers
--Mobile app maybe?
+- Optimize for other browsers
+- Optimize for mobile
+- Mobile app maybe?
+- More in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)
 
 I'm constantly trying to make the Lydia Butterfly experience better, so please report any bugs or suggestions in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)! Thanks!
