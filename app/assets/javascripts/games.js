@@ -86,7 +86,7 @@ $("document").ready(function(){
   function createTimer () {
     totalSeconds = 32 - level*2;
     
-    if (totalSeconds < 10) {
+    if (totalSeconds < 7) {
       totalSeconds = 7;
     }
 
