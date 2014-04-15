@@ -13,7 +13,7 @@ Lydia Butterfly is a speed-based color puzzle game, dedicated to my niece Lydia.
 3. Keep clicking until sections no longer match adjacent sections.
 
 An example of a winning game:
-!(Winning game example)[https://31.media.tumblr.com/f2425ce66787230b819556b2d03858fc/tumblr_inline_n40a8mXizS1s6jjx7.jpg]
+![Winning game example](https://31.media.tumblr.com/f2425ce66787230b819556b2d03858fc/tumblr_inline_n40a8mXizS1s6jjx7.jpg)
 
 ##Suggested Browsers
 
