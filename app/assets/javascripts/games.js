@@ -210,7 +210,7 @@ $("document").ready(function(){
   
   function assignSections () {
     var chosenPattern = patterns[Math.floor(Math.random()*patterns.length)];
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < chosenPattern.length; i++) {
       $("#sect_" + i).attr("class", chosenPattern[i]);
     };
   }
