@@ -2,7 +2,7 @@
 
 ##About
 
-Lydia Butterfly is a speed-based color puzzle game, dedicated to my niece Lydia.
+Lydia Butterfly is a speed-based color puzzle game, dedicated to my niece Lydia. The first version of this game was launched on April 11th, 2014, after about four and a half days of development as a project for [Omaha Code School](https://github.com/omahacodeschool).
 
 [Play it here!](http://lydiab.herokuapp.com/)
 
