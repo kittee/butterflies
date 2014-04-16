@@ -20,6 +20,7 @@ $("document").ready(function(){
   var gameIsOver = true;
   var levelIsOver = true;
   var colors = ["red", "yellow", "green", "blue"];
+  var sectionsNum = 20;
   
   // Main Flow
   $("#start_button").click(function () {
@@ -210,7 +211,7 @@ $("document").ready(function(){
   
   function assignSections () {
     var chosenPattern = patterns[Math.floor(Math.random()*patterns.length)];
-    for (var i = 0; i < chosenPattern.length; i++) {
+    for (var i = 0; i < sectionsNum; i++) {
       $("#sect_" + i).attr("class", chosenPattern[i]);
     };
   }
@@ -218,8 +219,8 @@ $("document").ready(function(){
   // Computer Randomness
   
   function randomChange() {
-    var randNum = Math.floor(Math.random()*20);
-    var randColor = colors[Math.floor(Math.random()*colors.length)];
+    var randNum = Math.floor(Math.random() * sectionsNum);
+    var randColor = colors[Math.floor(Math.random() * colors.length)];
     $("#sect_" + randNum).attr("class", randColor);
     levelWonCheck();
   }
@@ -228,7 +229,7 @@ $("document").ready(function(){
   var nonLinearPairs = [[0, 5], [1, 4], [6, 9], [10, 15], [11, 14], [16, 19]];
   
   function linearMatch () {
-    for (var i = 0; i < 19; i++) {
+    for (var i = 0; i < (sectionsNum - 1); i++) {
       if ( ($("#sect_" + i).attr("class") == $("#sect_" + (i+1)).attr("class")) && (i != 9) ) {
         return true;
       }
