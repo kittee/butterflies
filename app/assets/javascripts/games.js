@@ -45,7 +45,6 @@ $("document").ready(function(){
   $("#start_button").click(function () {
     level++;
     gameIsOver = false;
-    levelIsOver = false;
     
     if (score === 0) {
       saveGame();
@@ -67,6 +66,7 @@ $("document").ready(function(){
       createTimer();
       assignSections();
       $("#butterfly").fadeTo(250, 1);
+      levelIsOver = false;
       
       if (!$("#music a").hasClass("turned_off") && score === 0) {
         flightSong.play(); 
