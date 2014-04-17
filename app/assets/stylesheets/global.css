@@ -33,8 +33,26 @@ h3, h4, h5, h6 {
   letter-spacing: 3px;
 }
 
+h3 {
+  text-align: center;
+}
+
 p, li, td, th, label {
   letter-spacing: 1px;
+}
+
+@media (max-device-width: 700px) {
+  h1 {
+    font-size: 4em;
+  }
+  
+  #nav li {
+    font-size: 2em;
+  }
+  
+  #content td, #footer p strong, #footer p em {
+    font-size: 1.5em;
+  }
 }
 
 /* Links */
@@ -50,15 +68,16 @@ a:hover, a:active, a:focus {
 /* Sections */
 
 #container {
-  width: 60%;
-  min-width: 850px;
+  width: 90%;
+  min-width: 700px;
   margin: 0 auto;
   padding: 20px 0;
 }
 
 #nav {
-  height: 35px;
   text-align: center;
+  margin-bottom: -10px;
+  min-height: 3.5em;
 }
 
 #nav_links {
@@ -119,7 +138,7 @@ a:hover, a:active, a:focus {
 }
 
 #footer {
-  margin-top: 30px;
+  margin-top: 10px;
   text-align: center;
 }
 

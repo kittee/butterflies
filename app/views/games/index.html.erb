@@ -10,11 +10,10 @@
   <tbody>
     <% @all_top_games.each do |game| %>
       <tr>
-        <% username = User.find(game.user_id).username %>
-        <td><%= link_to username, user_path(username) %></td>
+        <td><%= link_to game.username, user_path(game.username) %></td>
         <td><%= game.final_score %></td>
-        <td><%= game.levels.length %></td>
-        <td><%= game.pretty_time %></td>
+        <td><%= game.level_num %></td>
+        <td><%= game.pretty_time(game.updated_at) %></td>
       </tr>
     <% end %>
   </tbody>

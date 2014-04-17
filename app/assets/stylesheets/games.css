@@ -1,3 +1,15 @@
+/* Butterfly */
+#butterfly-resizing {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 80%;
+  vertical-align: middle;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -20px;
+}
+
 #butterfly {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -6,7 +18,16 @@
   -ms-user-select: none;
   user-select: none;
   margin-top: 25px;
-  max-height: 55%;
+}
+
+#sections {
+  cursor: pointer;
+}
+
+.butterfly-content {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .intro_animation {
@@ -19,13 +40,13 @@
     transform: translateY(0);
   }
   25% {
-    transform:translateY(-30px);
+    transform:translateY(-25px);
   }
   50% {
     transform: translateY(0);
   }
   75% {
-    transform:translateY(-30px);
+    transform:translateY(-25px);
   }
 }
 
@@ -34,23 +55,20 @@
     -webkit-transform: translateY(0);
   }
   25% {
-    -webkit-transform:translateY(-30px);
+    -webkit-transform:translateY(-25px);
   }
   50% {
     -webkit-transform: translateY(0);
   }
   75% {
-    -webkit-transform:translateY(-30px);
+    -webkit-transform:translateY(-25px);
   }
 }
 
-#sections {
-  cursor: pointer;
-}
-
+/* Game Navigation Bar */
 #game_nav {
   margin-top: 25px;
-  height: 5em;
+  height: 7em;
 }
 
 #game_nav p {
@@ -77,11 +95,12 @@
 .messages_left {
   text-align: left;
   float: left;
+  width: 70%;
 }
 
 #start_button, #get_ready {
   display: block;
-  width: 25%;
+  width: 200px;
   margin: 0 auto;
   text-align: center;
   font-size: 3em;
@@ -114,6 +133,11 @@
   display: none;
 }
 
+polygon {
+  transition-property: fill;
+  transition-duration: 0.1s;
+}
+
 .red {
   fill: #f9a198;
 }
@@ -128,8 +152,4 @@
 
 .blue {
   fill: #9898ed;
-}
-
-.test {
-  background-color: #9898ed;
 }

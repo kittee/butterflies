@@ -1,4 +1,23 @@
 $("document").ready(function(){
+  // Dynamic height of game relative to window
+  function resizeButterfly() {
+    var h = $(window).height()-330;
+    var w = $(window).width();
+    
+    if (h < 300) {
+      $("#butterfly-resizing").css("padding-bottom", "300px");
+      $("#butterfly-resizing").css("width", "340px");
+    } else if (h*1.3 < w) {
+      $("#butterfly-resizing").css("padding-bottom", h);
+      $("#butterfly-resizing").css("width", h*1.15);
+      $("#butterfly-resizing").css("max-width", "100%");
+    }
+  }
+  
+  $(resizeButterfly()); // Resizes when page is first loaded
+  $(window).resize(resizeButterfly); // Resizes whenever window size is changed
+  
+  // Initial songs and variables needed
   var lydiaSong = new Howl({
     urls: ['/assets/lydia_butterfly.mp3'],
     loop: true
@@ -20,12 +39,12 @@ $("document").ready(function(){
   var gameIsOver = true;
   var levelIsOver = true;
   var colors = ["red", "yellow", "green", "blue"];
+  var sectionsNum = 20;
   
   // Main Flow
   $("#start_button").on("tap", function () {
     level++;
     gameIsOver = false;
-    levelIsOver = false;
     
     if (score === 0) {
       saveGame();
@@ -33,7 +52,7 @@ $("document").ready(function(){
     }
     
     $("#butterfly").fadeTo(3000, 0, function () {
-      $("#butterfly").attr("class", ""); // Removes bouncing from the intro page
+      $("#butterfly").attr("class", "butterfly-content"); // Removes bouncing from the intro page
     });
     
     $("#start_button").hide();
@@ -47,6 +66,7 @@ $("document").ready(function(){
       createTimer();
       assignSections();
       $("#butterfly").fadeTo(250, 1);
+      levelIsOver = false;
       
       if (!$("#music a").hasClass("turned_off") && score === 0) {
         flightSong.play(); 
@@ -86,7 +106,7 @@ $("document").ready(function(){
   function createTimer () {
     totalSeconds = 32 - level*2;
     
-    if (totalSeconds < 10) {
+    if (totalSeconds < 7) {
       totalSeconds = 7;
     }
 
@@ -210,7 +230,7 @@ $("document").ready(function(){
   
   function assignSections () {
     var chosenPattern = patterns[Math.floor(Math.random()*patterns.length)];
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < sectionsNum; i++) {
       $("#sect_" + i).attr("class", chosenPattern[i]);
     };
   }
@@ -218,8 +238,8 @@ $("document").ready(function(){
   // Computer Randomness
   
   function randomChange() {
-    var randNum = Math.floor(Math.random()*19);
-    var randColor = colors[Math.floor(Math.random()*colors.length)];
+    var randNum = Math.floor(Math.random() * sectionsNum);
+    var randColor = colors[Math.floor(Math.random() * colors.length)];
     $("#sect_" + randNum).attr("class", randColor);
     levelWonCheck();
   }
@@ -228,7 +248,7 @@ $("document").ready(function(){
   var nonLinearPairs = [[0, 5], [1, 4], [6, 9], [10, 15], [11, 14], [16, 19]];
   
   function linearMatch () {
-    for (var i = 0; i < 19; i++) {
+    for (var i = 0; i < (sectionsNum - 1); i++) {
       if ( ($("#sect_" + i).attr("class") == $("#sect_" + (i+1)).attr("class")) && (i != 9) ) {
         return true;
       }
