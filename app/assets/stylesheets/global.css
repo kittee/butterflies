@@ -50,8 +50,8 @@ a:hover, a:active, a:focus {
 /* Sections */
 
 #container {
-  width: 60%;
-  min-width: 850px;
+  width: 70%;
+  min-width: 900px;
   margin: 0 auto;
   padding: 20px 0;
 }

@@ -1,4 +1,5 @@
 $("document").ready(function(){
+  // Initial songs and variables needed
   var lydiaSong = new Howl({
     urls: ['/assets/lydia_butterfly.mp3'],
     loop: true

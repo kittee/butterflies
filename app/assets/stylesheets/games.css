@@ -1,3 +1,13 @@
+/* Butterfly */
+#butterfly-resizing {
+  display: block;
+  position: relative;
+  width: 65%;
+  padding-bottom: 52%;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
 #butterfly {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -6,7 +16,16 @@
   -ms-user-select: none;
   user-select: none;
   margin-top: 25px;
-  max-height: 55%;
+}
+
+#sections {
+  cursor: pointer;
+}
+
+.butterfly-content {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .intro_animation {
@@ -44,10 +63,7 @@
   }
 }
 
-#sections {
-  cursor: pointer;
-}
-
+/* Game Navigation Bar */
 #game_nav {
   margin-top: 25px;
   height: 5em;
