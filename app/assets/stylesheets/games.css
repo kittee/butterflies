@@ -8,6 +8,7 @@
   padding-bottom: 80%;
   vertical-align: middle;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 #butterfly {
@@ -40,13 +41,13 @@
     transform: translateY(0);
   }
   25% {
-    transform:translateY(-30px);
+    transform:translateY(-25px);
   }
   50% {
     transform: translateY(0);
   }
   75% {
-    transform:translateY(-30px);
+    transform:translateY(-25px);
   }
 }
 
@@ -55,13 +56,13 @@
     -webkit-transform: translateY(0);
   }
   25% {
-    -webkit-transform:translateY(-30px);
+    -webkit-transform:translateY(-25px);
   }
   50% {
     -webkit-transform: translateY(0);
   }
   75% {
-    -webkit-transform:translateY(-30px);
+    -webkit-transform:translateY(-25px);
   }
 }
 

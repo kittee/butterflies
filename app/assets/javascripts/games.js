@@ -2,11 +2,14 @@ $("document").ready(function(){
   // Dynamic height of game relative to window
   function resizeButterfly() {
     var h = $(window).height()-330;
-    var w = $(window).width()
+    var w = $(window).width();
     
-    if (h*1.3 < w) {
+    if (h < 300) {
+      $("#butterfly-resizing").css("padding-bottom", "300px");
+      $("#butterfly-resizing").css("width", "340px");
+    } else if (h*1.3 < w) {
       $("#butterfly-resizing").css("padding-bottom", h);
-      $("#butterfly-resizing").css("width", h*1.3);
+      $("#butterfly-resizing").css("width", h*1.15);
       $("#butterfly-resizing").css("max-width", "100%");
     }
   }
@@ -50,7 +53,7 @@ $("document").ready(function(){
     }
     
     $("#butterfly").fadeTo(3000, 0, function () {
-      $("#butterfly").attr("class", ""); // Removes bouncing from the intro page
+      $("#butterfly").attr("class", "butterfly-content"); // Removes bouncing from the intro page
     });
     
     $("#start_button").hide();
