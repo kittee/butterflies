@@ -1,4 +1,19 @@
 $("document").ready(function(){
+  // Dynamic height of game relative to window
+  function resizeButterfly() {
+    var h = $(window).height()-330;
+    var w = $(window).width()
+    
+    if (h*1.3 < w) {
+      $("#butterfly-resizing").css("padding-bottom", h);
+      $("#butterfly-resizing").css("width", h*1.3);
+      $("#butterfly-resizing").css("max-width", "100%");
+    }
+  }
+  
+  $(resizeButterfly()); // Resizes when page is first loaded
+  $(window).resize(resizeButterfly); // Resizes whenever window size is changed
+  
   // Initial songs and variables needed
   var lydiaSong = new Howl({
     urls: ['/assets/lydia_butterfly.mp3'],

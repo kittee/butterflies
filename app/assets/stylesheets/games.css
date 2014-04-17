@@ -2,8 +2,10 @@
 #butterfly-resizing {
   display: block;
   position: relative;
-  width: 65%;
-  padding-bottom: 52%;
+/*  width: 65%;
+  padding-bottom: 52%;*/
+  width: 100%;
+  padding-bottom: 80%;
   vertical-align: middle;
   margin: 0 auto;
 }
@@ -97,7 +99,7 @@
 
 #start_button, #get_ready {
   display: block;
-  width: 25%;
+  width: 200px;
   margin: 0 auto;
   text-align: center;
   font-size: 3em;
