@@ -73,6 +73,7 @@ a:hover, a:active, a:focus {
 #nav {
   text-align: center;
   margin-bottom: -10px;
+  min-height: 3.5em;
 }
 
 #nav_links {
