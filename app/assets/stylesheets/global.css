@@ -33,6 +33,10 @@ h3, h4, h5, h6 {
   letter-spacing: 3px;
 }
 
+h3 {
+  text-align: center;
+}
+
 p, li, td, th, label {
   letter-spacing: 1px;
 }
