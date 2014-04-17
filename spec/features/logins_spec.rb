@@ -11,6 +11,13 @@ describe "Logins" do
     expect(page).to have_content("Welcome, kitty!")
   end
   
+  it "shows error messages for signing up", :js => true do
+    visit root_path
+    click_link("Sign Up")
+    click_on("Sign Up")
+    expect(page).to have_content("Password digest can't be blank, Email is invalid, Username is invalid, Username is too short (minimum is 3 characters)")
+  end
+  
   it "can log out", :js => true do
     visit root_path
     click_link("Sign Up")
@@ -35,5 +42,12 @@ describe "Logins" do
     fill_in("password", :with => "kitty")
     click_on("Log In")
     expect(page).to have_content("Welcome, kitty!")
+  end
+  
+  it "shows error messages for signing in", :js => true do
+    visit root_path
+    click_link("Sign In")
+    click_on("Log In")
+    expect(page).to have_content("Invalid login information")
   end
 end
