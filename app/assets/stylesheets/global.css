@@ -46,7 +46,7 @@ p, li, td, th, label {
     font-size: 2em;
   }
   
-  #footer p strong, #footer p em {
+  #content td, #footer p strong, #footer p em {
     font-size: 1.5em;
   }
 }
