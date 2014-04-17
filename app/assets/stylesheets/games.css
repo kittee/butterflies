@@ -2,13 +2,12 @@
 #butterfly-resizing {
   display: block;
   position: relative;
-/*  width: 65%;
-  padding-bottom: 52%;*/
   width: 100%;
   padding-bottom: 80%;
   vertical-align: middle;
   margin: 0 auto;
   overflow: hidden;
+  margin-top: -20px;
 }
 
 #butterfly {
@@ -69,7 +68,7 @@
 /* Game Navigation Bar */
 #game_nav {
   margin-top: 25px;
-  height: 5em;
+  height: 7em;
 }
 
 #game_nav p {
@@ -96,6 +95,7 @@
 .messages_left {
   text-align: left;
   float: left;
+  width: 70%;
 }
 
 #start_button, #get_ready {
@@ -131,6 +131,11 @@
 
 #user_info {
   display: none;
+}
+
+polygon {
+  transition-property: fill;
+  transition-duration: 0.1s;
 }
 
 .red {
