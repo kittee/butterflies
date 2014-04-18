@@ -16,6 +16,11 @@ $("document").ready(function(){
   
   $(resizeButterfly()); // Resizes when page is first loaded
   $(window).resize(resizeButterfly); // Resizes whenever window size is changed
+
+  // Fast click fix for mobile
+  $(function() {
+      FastClick.attach(document.body);
+  });
   
   // Initial songs and variables needed
   var lydiaSong = new Howl({
