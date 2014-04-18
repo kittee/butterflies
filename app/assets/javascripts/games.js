@@ -128,18 +128,29 @@ $("document").ready(function(){
   
   // Color Changing Mechanics
   // After every color change, the game looks to see if the game has been won yet.
+  $('#sections polygon').bind("click", function (ev) {
+        // Do Some stuff
+        ev.preventDefault();
+  });
+  
   $("#sections polygon").click(changeColor);
   
   function changeColor () {
     if (!gameIsOver && !levelIsOver) {
-      if ($(this).attr("class") == "red") {
-        $(this).attr("class", "yellow");
-      } else if ($(this).attr("class") == "yellow") {
-        $(this).attr("class", "green");
-      } else if ($(this).attr("class") == "green") {
-        $(this).attr("class", "blue");
-      } else if ($(this).attr("class") == "blue") {
-        $(this).attr("class", "red");
+      var currentColor = $(this).attr("class");
+      
+      switch (currentColor) {
+        case "red":
+          $(this).attr("class", "yellow");
+          break;
+        case "yellow":
+          $(this).attr("class", "green");
+          break;
+        case "green":
+          $(this).attr("class", "blue");
+          break;
+        case "blue":
+          $(this).attr("class", "red");
       }
       
       if (!$("#music a").hasClass("turned_off")) {
