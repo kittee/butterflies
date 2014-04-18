@@ -30,17 +30,16 @@ An example of a winning game:
 - Chrome (Mac and Windows)
 - Safari (Mac)
 - Opera (Mac)
-- Firefox (Mac)
+- Firefox (Mac and Windows)
+- Internet Explorer (Windows)
 
 ###Eh:
-- Safari (iPhone) (it's fairly slow)
+- Safari (iPhone) (300ms delay after each click)
 
 ###Blech:
 - There are currently no known browsers that Lydia Butterfly looks "blech" in! Hooray!
 
 ###Untested:
-- Firefox (Windows)
-- Internet Explorer (Windows)
 - Safari (Windows)
 - Opera (Windows)
 - Anything else not explicitly listed in the "Good", "Eh", and "Blech" sections
