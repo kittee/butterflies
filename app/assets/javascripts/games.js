@@ -128,11 +128,6 @@ $("document").ready(function(){
   
   // Color Changing Mechanics
   // After every color change, the game looks to see if the game has been won yet.
-  $('#sections polygon').bind("click", function (ev) {
-        // Do Some stuff
-        ev.preventDefault();
-  });
-  
   $("#sections polygon").click(changeColor);
   
   function changeColor () {
