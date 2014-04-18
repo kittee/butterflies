@@ -29,18 +29,20 @@ An example of a winning game:
 ###Good:
 - Chrome (Mac and Windows)
 - Safari (Mac)
+- Opera (Mac)
+- Firefox (Mac)
 
 ###Eh:
-- Firefox (Mac)
 - Safari (iPhone) (it's fairly slow)
 
 ###Blech:
-- Firefox (Windows)
-- Internet Explorer (Windows)
+- There are currently no known browsers that Lydia Butterfly looks "blech" in! Hooray!
 
 ###Untested:
+- Firefox (Windows)
+- Internet Explorer (Windows)
 - Safari (Windows)
-- Opera
+- Opera (Windows)
 - Anything else not explicitly listed in the "Good", "Eh", and "Blech" sections
 
 ##The Future of Lydia Butterfly
