@@ -17,7 +17,7 @@ $("document").ready(function(){
   $(resizeButterfly()); // Resizes when page is first loaded
   $(window).resize(resizeButterfly); // Resizes whenever window size is changed
 
-  // Fast click fix for mobile
+  // FastClick fix for mobile
   $(function() {
       FastClick.attach(document.body);
   });
