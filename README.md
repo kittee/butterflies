@@ -28,16 +28,10 @@ An example of a winning game:
 
 ###Good:
 - Chrome (Mac and Windows)
-- Safari (Mac)
+- Safari (Mac and iPhone)
 - Opera (Mac)
 - Firefox (Mac and Windows)
 - Internet Explorer (Windows)
-
-###Eh:
-- Safari (iPhone) (300ms delay after each click)
-
-###Blech:
-- There are currently no known browsers that Lydia Butterfly looks "blech" in! Hooray!
 
 ###Untested:
 - Safari (Windows)
@@ -46,8 +40,6 @@ An example of a winning game:
 
 ##The Future of Lydia Butterfly
 
-- Optimize for other browsers
-- Optimize for mobile
 - Mobile app maybe?
 - More in the [issues section](https://github.com/Caraheacock/butterflies/issues?state=open)
 
