@@ -36,7 +36,7 @@ An example of a winning game:
 ###Untested:
 - Safari (Windows)
 - Opera (Windows)
-- Anything else not explicitly listed in the "Good", "Eh", and "Blech" sections
+- Anything else not explicitly listed in the "Good" sections
 
 ##The Future of Lydia Butterfly
 
