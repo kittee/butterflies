@@ -27,9 +27,9 @@ An example of a winning game:
 ## Technical Stuff
 ##### (If you're interested in that kind of thing)
 
-Lydia Butterfly is a Rails application, but Javascript is primarily what's making the game run, such as the timer mechanism, changing colors on click, randomly changing colors, etc.
+Lydia Butterfly is a Rails application, but Javascript is primarily what's making the game run, such as the timer mechanism, changing colors on click, randomly changing colors, automatically saving games, etc.
 
-The butterfly itself is an SVG object, because it seemed like an easier way to tackle the game instead of trying to puzzle together divs holding images, or one image with an HTML map. Having each polygon in its own polygon tag simplified the process of manipulating the game using Javascript and CSS.
+The butterfly itself is an SVG object that I created in Adobe Illustrator CC, because it was significantly simpler than cobbling together divs holding images, or drawing an HTML map over one image. Having each polygon in its own polygon tag simplified the process of manipulating the game using Javascript and CSS.
 
 The code that is doing most of the heavy lifting in the game is located in app/assets/javascripts/games.js.
 
