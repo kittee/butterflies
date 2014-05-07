@@ -45,7 +45,7 @@ The code that is doing most of the heavy lifting in the game is located in **app
 ###Untested:
 - Safari (Windows)
 - Opera (Windows)
-- Anything else not explicitly listed in the "Good", "Eh", and "Blech" sections
+- Anything else not explicitly listed
 
 ##The Future of Lydia Butterfly
 
