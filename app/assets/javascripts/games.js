@@ -247,7 +247,6 @@ $("document").ready(function(){
   }
   
   // Computer Randomness
-  
   function randomChange() {
     var randNum = Math.floor(Math.random() * sectionsNum);
     var randColor = colors[Math.floor(Math.random() * colors.length)];
@@ -310,7 +309,6 @@ $("document").ready(function(){
   }
   
   // Saving Levels and Games
-  
   function saveGame () {
     if ($('#game_save_form form').hasClass("edit_game")) {
       $("#game_levels_attributes_0_level_num").val(level);
@@ -323,7 +321,6 @@ $("document").ready(function(){
   }
   
   // Toggle Music and Sound
-  
   $("#music").click(function () {
     if ($("#music a").hasClass("turned_off")) {
       $("#music a").removeClass("turned_off");

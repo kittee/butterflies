@@ -24,6 +24,15 @@ An example of a winning game:
 - The computer will randomly change colors on the butterfly, so watch out!
 - You can play as much as you would like without signing up, but if you do sign up, the game will keep track of your personal stats, and you will also be eligible for the high score table.
 
+## Technical Stuff
+##### (If you're interested in that kind of thing)
+
+Lydia Butterfly is a Rails application, but Javascript is primarily what's making the game run, such as the timer mechanism, changing colors on click, randomly changing colors, etc.
+
+The butterfly itself is an SVG object, because it seemed like an easier way to tackle the game instead of trying to puzzle together divs holding images, or one image with an HTML map. Having each polygon in its own polygon tag simplified the process of manipulating the game using Javascript and CSS.
+
+The code that is doing most of the heavy lifting in the game is located in app/assets/javascripts/games.js.
+
 ##Suggested Browsers
 
 ###Good:
