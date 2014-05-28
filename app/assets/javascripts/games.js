@@ -348,42 +348,26 @@ $("document").ready(function(){
       $("#butterfly").fadeIn(1000, function () {
         $("#game_timer").text("Click sections to change their color.").fadeIn(300);
         setTimeout(function () {
-          demoChange(1, "yellow");
+          demoChange(demoSectionNums[0], demoSectionColors[0]);
         }, 2000);
         
         setTimeout(keepClickingText, 3000);
         
         setTimeout(function () {
-          demoChange(4, "green");
+          var i = 1;
+        
+          setInterval(function () {
+            demoChange(demoSectionNums[i], demoSectionColors[i]);
+            i++;
+          }, 500);
         }, 6000);
-        
-        setTimeout(function () {
-          demoChange(6, "green");
-        }, 6500);
-        
-        setTimeout(function () {
-          demoChange(9, "yellow");
-        }, 7000);
-        
-        setTimeout(function () {
-          demoChange(19, "blue");
-        }, 7500);
-        
-        setTimeout(function () {
-          demoChange(16, "red");
-        }, 8000);
-        
-        setTimeout(function () {
-          demoChange(14, "red");
-        }, 8500);
-        
-        setTimeout(function () {
-          demoChange(11, "blue");
-        }, 9000);
-      });
       
-      function demoChange (i, color) {
-        $("#sect_" + i).attr("class", color);
+      var demoSectionNums = [1, 4, 6, 9, 19, 16, 14, 11];
+      var demoSectionColors = ["yellow", "green", "green", "yellow", "blue", "red", "red", "blue"];
+      var timeLapse = 500;
+      
+      function demoChange (num, color) {
+        $("#sect_" + num).attr("class", color);
       }
       
       function keepClickingText () {
