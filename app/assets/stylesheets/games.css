@@ -69,6 +69,7 @@
 #game_nav {
   margin-top: 25px;
   height: 7em;
+  text-align: center;
 }
 
 #game_nav p {
@@ -98,12 +99,11 @@
   width: 70%;
 }
 
-#start_button, #get_ready {
-  display: block;
-  width: 200px;
+#start_button, #get_ready, #how_to_button {
+  display: inline-block;
   margin: 0 auto;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   padding-left: 15px;
   padding-right: 15px;
   background-color: #999;
@@ -112,6 +112,18 @@
   letter-spacing: 3px;
   border: none;
   cursor: pointer;
+}
+
+#start_button {
+  margin-right: 30px;
+}
+
+#get_ready {
+  display: none;
+}
+
+#how_to_button {
+  background-color: ;
 }
 
 #start_button:hover, #start_button:active, #start_button:focus {
