@@ -361,6 +361,24 @@ $("document").ready(function(){
             i++;
           }, 500);
         }, 6000);
+        
+        setTimeout(belowExampleText, 11000);
+        
+        setTimeout(function () {
+          $("#game_timer").fadeOut(1000);
+          $("#butterfly").fadeOut(1000, function () {
+            for (var i = 0; i < sectionsNum; i++) {
+              $("#sect_" + i).attr("class", "");
+            };
+            
+            $("#butterfly").attr("class", "intro_animation butterfly-content").fadeIn(1000);
+            $("#start_button, #demo_button").fadeIn(1000);
+            
+            // $("#new_game").trigger("click");
+            // console.log("Click?");
+          });
+        }, 15000);
+      });
       
       var demoSectionNums = [1, 4, 6, 9, 19, 16, 14, 11];
       var demoSectionColors = ["yellow", "green", "green", "yellow", "blue", "red", "red", "blue"];
@@ -371,7 +389,11 @@ $("document").ready(function(){
       }
       
       function keepClickingText () {
-        $("#game_timer").hide().text("Keep clicking until sections no longer match adjacent sections.").fadeIn(500);
+        $("#game_timer").hide().text("Keep clicking until sections no longer match the colors of adjacent sections.").fadeIn(500);
+      }
+      
+      function belowExampleText () {
+        $("#game_timer").hide().text("Below is an example of a winning game.").fadeIn(500);
       }
     });
   });
