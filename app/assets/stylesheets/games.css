@@ -99,8 +99,9 @@
   width: 70%;
 }
 
-#start_button, #get_ready, #how_to_button {
+#start_button, #get_ready, #demo_button {
   display: inline-block;
+  width: 200px;
   margin: 0 auto;
   text-align: center;
   font-size: 2.5em;
@@ -122,12 +123,17 @@
   display: none;
 }
 
-#how_to_button {
-  background-color: ;
+#demo_button {
+  background-color: #eee;
+  color: #ddd;
 }
 
-#start_button:hover, #start_button:active, #start_button:focus {
+#start_button:hover {
   background-color: #666;
+}
+
+#demo_button:hover {
+  background-color: #fff;
 }
 
 #game_timer {
