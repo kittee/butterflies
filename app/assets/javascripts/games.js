@@ -62,7 +62,7 @@ $("document").ready(function(){
     
     $("#start_button, #demo_button, #game_timer, #score_calc, #score").hide();
     $("#game_messages").removeClass("messages_left").addClass("messages_center");
-    $("#get_ready").show().fadeOut(3000, function() {
+    $("#get_ready").show().fadeOut(3000, function () {
       $("#game_timer").fadeIn(250);
       $("#score").text("Level: " + level + " | Score: " + score).fadeIn(250);
       createTimer();
@@ -337,7 +337,8 @@ $("document").ready(function(){
   
   // Demo
   $("#demo_button").click(function () {
-    $("#start_button, #demo_button, #butterfly").fadeOut(1000, function () {
+    $("#start_button, #demo_button").fadeOut(1000);
+    $("#butterfly").fadeOut(1000, function () {
       // Assign colors to sections while butterfly is faded out
       for (var i = 0; i < sectionsNum; i++) {
         $("#sect_" + i).attr("class", pattern0[i]);
@@ -345,8 +346,49 @@ $("document").ready(function(){
       
       $("#butterfly").attr("class", "butterfly-content");
       $("#butterfly").fadeIn(1000, function () {
-        $("#game_messages").text("Hello world");
+        $("#game_timer").text("Click sections to change their color.").fadeIn(300);
+        setTimeout(function () {
+          demoChange(1, "yellow");
+        }, 2000);
+        
+        setTimeout(keepClickingText, 3000);
+        
+        setTimeout(function () {
+          demoChange(4, "green");
+        }, 6000);
+        
+        setTimeout(function () {
+          demoChange(6, "green");
+        }, 6500);
+        
+        setTimeout(function () {
+          demoChange(9, "yellow");
+        }, 7000);
+        
+        setTimeout(function () {
+          demoChange(19, "blue");
+        }, 7500);
+        
+        setTimeout(function () {
+          demoChange(16, "red");
+        }, 8000);
+        
+        setTimeout(function () {
+          demoChange(14, "red");
+        }, 8500);
+        
+        setTimeout(function () {
+          demoChange(11, "blue");
+        }, 9000);
       });
+      
+      function demoChange (i, color) {
+        $("#sect_" + i).attr("class", color);
+      }
+      
+      function keepClickingText () {
+        $("#game_timer").hide().text("Keep clicking until sections no longer match adjacent sections.").fadeIn(500);
+      }
     });
   });
 });
