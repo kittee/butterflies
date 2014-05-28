@@ -124,7 +124,7 @@
 }
 
 #demo_button {
-  background-color: #eee;
+  background-color: #fff;
   color: #ddd;
 }
 
@@ -133,7 +133,7 @@
 }
 
 #demo_button:hover {
-  background-color: #fff;
+  background-color: #eee;
 }
 
 #game_timer {

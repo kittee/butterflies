@@ -60,10 +60,7 @@ $("document").ready(function(){
       $("#butterfly").attr("class", "butterfly-content"); // Removes bouncing from the intro page
     });
     
-    $("#start_button").hide();
-    $("#game_timer").hide();
-    $("#score_calc").hide();
-    $("#score").hide();
+    $("#start_button, #demo_button, #game_timer, #score_calc, #score").hide();
     $("#game_messages").removeClass("messages_left").addClass("messages_center");
     $("#get_ready").show().fadeOut(3000, function() {
       $("#game_timer").fadeIn(250);
@@ -336,5 +333,20 @@ $("document").ready(function(){
       lydiaSong.stop();
       flightSong.stop();
     }
+  });
+  
+  // Demo
+  $("#demo_button").click(function () {
+    $("#start_button, #demo_button, #butterfly").fadeOut(1000, function () {
+      // Assign colors to sections while butterfly is faded out
+      for (var i = 0; i < sectionsNum; i++) {
+        $("#sect_" + i).attr("class", pattern0[i]);
+      };
+      
+      $("#butterfly").attr("class", "butterfly-content");
+      $("#butterfly").fadeIn(1000, function () {
+        $("#game_messages").text("Hello world");
+      });
+    });
   });
 });
