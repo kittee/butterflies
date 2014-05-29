@@ -371,8 +371,11 @@ $("document").ready(function(){
               $("#sect_" + i).attr("class", "");
             };
             
-            $("#butterfly").attr("class", "intro_animation butterfly-content").fadeIn(1000);
+            $("#butterfly").fadeIn(1000, function () {
+              $("#butterfly").attr("class", "intro_animation butterfly-content");
+            });
             $("#start_button, #demo_button").fadeIn(1000);
+            console.log($("#butterfly").attr("class"));
             
             // $("#new_game").trigger("click");
             // console.log("Click?");
