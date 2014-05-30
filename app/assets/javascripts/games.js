@@ -355,10 +355,14 @@ $("document").ready(function(){
         
         setTimeout(function () {
           var i = 1;
-        
-          setInterval(function () {
+          var changeDemoSections = setInterval(function () {
             demoChange(demoSectionNums[i], demoSectionColors[i]);
+            console.log(i);
             i++;
+            
+            if (i >= demoSectionNums.length) {
+              clearInterval(changeDemoSections);
+            }
           }, 500);
         }, 6000);
         
@@ -375,7 +379,6 @@ $("document").ready(function(){
               $("#butterfly").attr("class", "intro_animation butterfly-content");
             });
             $("#start_button, #demo_button").fadeIn(1000);
-            console.log($("#butterfly").attr("class"));
             
             // $("#new_game").trigger("click");
             // console.log("Click?");
